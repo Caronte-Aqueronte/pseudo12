@@ -1,0 +1,45 @@
+Algoritmo pseudo12
+	Definir altura, sumaalturamujer,sumaalturahombre, contador1, contador2,contador3, edad, sumaedades Como Entero
+	Definir promedio1, promedio2, promedio3 Como Real
+	Definir sexo Como Caracter
+	Mientras altura >= 0 Hacer
+		Escribir "Ingrese la altura en cm"
+		Leer altura
+		Si altura >= 0 Entonces
+			Escribir "Ingrese la edad"
+			Leer edad
+			Escribir "Ingrese el sexo F/M"
+			Leer sexo
+			Mientras sexo <> "F" y sexo <> "M"  Hacer
+				Escribir "Ingrese el sexo valido F/M"
+				Leer sexo
+			Fin Mientras
+			Segun sexo Hacer
+				"F":
+					sumaalturamujer = sumaalturamujer + altura
+					contador1 = contador1 + 1
+				"M":
+					sumaalturahombre = sumaalturahombre + altura
+					contador2 = contador2 + 1
+			Fin Segun
+			contador3 = contador3 + 1
+			sumaedades = sumaedades + edad
+		FinSi
+		
+	Fin Mientras
+	Si contador1 == 0 Entonces
+		contador1 = 1
+	FinSi
+	Si contador2 == 0 Entonces
+		contador2 = 1
+	FinSi
+	Si contador3 == 0 Entonces
+		contador3 = 1
+	FinSi
+	promedio1 = sumaalturamujer / contador1
+	promedio2 = sumaalturahombre / contador2
+	promedio3 = sumaedades / contador3
+	Escribir "El promedio de altura en mujeres es de ", promedio1," cm"
+	Escribir "El promedio de altura en hombres es de ", promedio2," cm"
+	Escribir "El promedio de edades es de ", promedio3," años"
+FinAlgoritmo
